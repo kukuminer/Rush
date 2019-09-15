@@ -8,7 +8,7 @@ int** LevelReader::Read(sf::Image i)
 {
 	int w = i.getSize().x;
 	int h = i.getSize().y;
-	printf("w: %i, h: %i\n", w, h);
+	//printf("w: %i, h: %i\n", w, h);
 	int** arr = 0;
 	arr = new int* [h];
 	//int arr[w][h];

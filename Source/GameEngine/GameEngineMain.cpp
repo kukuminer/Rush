@@ -82,7 +82,7 @@ void GameEngineMain::RemoveEntity(Entity* entity)
 	if (found == m_entities.end())
 	{
 		found = std::find(m_entitiesToRemove.begin(), m_entitiesToRemove.end(), entity);
-		assert(found != m_entitiesToRemove.end()); //Drop an assert if we remove a non existing entity (neither on entity list and on entity to remove list);
+		//assert(found != m_entitiesToRemove.end()); //Drop an assert if we remove a non existing entity (neither on entity list and on entity to remove list);
 	}	
 
 	if (found != m_entities.end())
@@ -94,7 +94,7 @@ void GameEngineMain::RemoveEntity(Entity* entity)
 
 void GameEngineMain::RemoveAllEntities()
 {
-	printf("\nm_entities.size() is %i\n", m_entities.size());
+	//printf("\nm_entities.size() is %i\n", m_entities.size());
 	for (int a = 0; a < m_entities.size(); a++)
 	{
 		if (m_entities[a] == nullptr)
@@ -151,7 +151,9 @@ void GameEngineMain::RemovePendingEntities()
 		Entity* entity = m_entitiesToRemove[a];
 
 		auto found = std::find(m_entities.begin(), m_entities.end(), entity);
-		assert(found != m_entities.end());
+		//assert(found != m_entities.end());
+		if (!(found != m_entities.end()))
+			break;
 
 		if (found != m_entities.end())
 		{

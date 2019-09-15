@@ -101,7 +101,7 @@ void GameBoard::Update()
 			sf::sleep(t);
 		}
 	}
-	if ((int) GameEngine::GameEngineMain::GetGameTime() > 6)
+	if ((int) GameEngine::GameEngineMain::GetGameTime() > 60)
 	{
 		GameEngine::GameEngineMain::GetInstance()->RemoveAllEntities();
 		GameEngine::GameEngineMain::GetInstance()->GetRenderWindow()->setTitle("Game Over!");
@@ -124,8 +124,8 @@ void GameBoard::MakeRoom(int entry, int room)
 
 
 
-	printf("room is %i\n", room);
-	printf("you have %i coins", coinsCol);
+	//printf("room is %i\n", room);
+	//printf("you have %i coins", coinsCol);
 	
 	int rotaRoom[16][16];
 	//int** rotaRoom = 0;
